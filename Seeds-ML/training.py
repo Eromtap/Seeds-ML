@@ -1,4 +1,9 @@
-def main():    
+'''
+This is going to be the dynamic version of the training module
+'''
+
+
+def main(accuracy, training_set):    
     import csv
     import random
     
@@ -124,14 +129,14 @@ def main():
     
     
     ## Csv file we want to use for training or testing
-    csv_file = 'testing-200.csv'
+    csv_file = training_set
     
     ## Number of rows in csv file used for calculating accuracy
     row_count = sum(1 for line in open(csv_file))
     
     
     ## Accuracy we want to achieve, can be changed to anything below 100
-    desired_accuracy = 80
+    desired_accuracy = accuracy
     
     percentage = desired_accuracy / 100
     
@@ -177,6 +182,16 @@ def main():
     
     
     ## Create dict from csv data
+    '''
+    This needs to be changed to the func from figuring_out_processes to be dynamic
+    
+    Looks like just about every func is going to need to be changed. So everything,
+    we are basically using this as a general structure and will go func by func replacing 
+    non-dynamic code with dynamic
+    
+    Import data will have to be the first func, everything else will depend on the 
+    dict it creates. May even put it in the main.py script and pass dict in as an arguement.
+    '''
     
     def import_data():  
         global row_count
@@ -302,6 +317,9 @@ def main():
     ## If we have gone thru too many iterations, start over. Resets weight ranges and range counter
         
     def start_over(): 
+        '''
+        All of this needs to be changed for unknown dicts
+        '''
         
         global range_counter
         global temp_percentage
@@ -349,6 +367,9 @@ def main():
     
     while 1:
          
+        '''
+        This will also need to be chaged to accomodate dicts of different lengths
+        '''
         correct = 0
     
         area_node = random.uniform(areaL, areaH)
@@ -375,6 +396,17 @@ def main():
         ## of length, width, etc to variables and call the nodes func to do the 
         ## math. Then assign a prediction based on the range the result 
         ## falls into. Change the file name to switch between training and test sets
+                
+        '''
+        So, we have a function in figuring out processes that creates a dict from
+        a csv file with unknown number of rows and columns. We need to use this 
+        to create the appropriate number of nodes. Id say this is the next step
+        
+        Shouldn't be too hard. iterate thru the dict and just create nodes for each
+        datapoint in a single row. So name them node + i (iteration)
+        
+        Obviously we need to add the dynamic dict creation function to this script in place of the current import_data func
+        '''
         
         for v in data.values():
             area = v[0]
@@ -403,8 +435,8 @@ def main():
             if prediction == spec:
                 correct += 1
         
-            else:
-                answer = ''
+            # else:
+            #     answer = '' ### dont think we need this anymore, but not sure#############
     
         if correct / (row_count) >= percentage:
             break
@@ -442,7 +474,7 @@ def main():
     
     
 if __name__ =='__main__':
-    main()    
+    main(90, 'training.csv')    
     
     
     
