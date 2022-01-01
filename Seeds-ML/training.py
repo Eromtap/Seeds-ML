@@ -384,12 +384,12 @@ def main(accuracy, training_set):
         # func to add up weighted nodes and input values    
         def nodes(s_area, s_perm, s_comp, s_len, s_wid, s_asym, s_groo):
             
-            bias = 1
+         
     
             return (s_area * area_node) + (s_perm * perm_node) \
                 + (s_comp * comp_node) + (s_len * len_node) \
                 + (s_wid * wid_node) + (s_asym  * asym_node) \
-                + (s_groo * groo_node) + bias
+                + (s_groo * groo_node)
                 
         
         ## Pretty straight forward here, open the csv file and assign the values
