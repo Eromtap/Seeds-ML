@@ -59,25 +59,25 @@ def main():
     save the weights it finds
     '''
     
-    area_node = 1.6898076872207841
-    perm_node = -1.8649126992056229
-    comp_node = 2.15707455424053
-    len_node = 0.6377517003906962
-    wid_node = -1.8312300920596327 
-    asym_node = -0.1325329140663852 
-    groo_node = 0.48717891421680326
+    area_node =  0.9858725966017494 
+    perm_node =  -0.6501985649657807 
+    comp_node =  -0.33984304230361784 
+    len_node =  -0.12613610298582834 
+    wid_node =  -0.5921460571759212 
+    asym_node =  -0.07785799886672606 
+    groo_node =  -0.3206700620069862
     
     
     
     
     def nodes(s_area, s_perm, s_comp, s_len, s_wid, s_asym, s_groo):
         
-        bias = 1
+
     
         return (s_area * area_node) + (s_perm * perm_node) \
             + (s_comp * comp_node) + (s_len * len_node) \
             + (s_wid * wid_node) + (s_asym  * asym_node) \
-            + (s_groo * groo_node) + bias
+            + (s_groo * groo_node)
             
     
     ## Pretty straight forward here, open the csv file and assign the values
