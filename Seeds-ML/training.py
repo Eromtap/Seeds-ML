@@ -418,6 +418,16 @@ def main(accuracy, training_set):
             groo = v[6]
             
             spec = v[7]
+            
+            '''
+            So these prediction values will need to change based on a couple things
+            how many different values we have, and which prediction is better. so,
+            the predictions will need to change if acceptable accuracy not achieved
+            after a certain number of attempts. Much like our get further and get closer funcs.
+            
+            Also, the ranges will need to be a certain amount, divided by the number of possible
+            prediction values. This part is gonna be tough
+            '''
                 
             if nodes(area, perm, comp, leng, wide, asym, groo) >= 1:  
                 prediction = '2'
