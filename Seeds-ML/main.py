@@ -32,6 +32,7 @@ while 1:
     selection = input('''Enter 1 to train.
 Enter 2 to test
 Enter 3 to predict
+Enter Q to quit
 
 ''')
 
@@ -49,5 +50,13 @@ Enter 3 to predict
     # Then it will output the accuracy achieved with set weights
     elif selection == '2':
         testing.main()
+
+    
+    
+    elif selection == 'Q' or selection == 'q':
+        print('\n\nThank you for using UF Machine Learning')
         break
     
+    
+    else:
+        print('\n\nCommand Not Recognized')
