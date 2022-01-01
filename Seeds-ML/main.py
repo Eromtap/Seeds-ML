@@ -26,14 +26,28 @@ import training
 
 while 1:
     
-    
-    print('UF Machine Learning')
+    print('\n')
+    print('-'*50)
+    print('\n\nUF Machine Learning')
     selection = input('''Enter 1 to train.
 Enter 2 to test
 Enter 3 to predict
 
 ''')
+
+    # If training, program will ask for desired accuracy and keep trying until
+    # that accuracy target is met or after a certain number of tries
+    # Still need to add a stopping point for if it can't meet accuracy
     if selection == '1':
-        
-        training.main()
+        training_set = input('Please enter path to training dataset: ')
+        accuracy = int(input('Enter Desired Accuracy: '))
+        training.main(accuracy, training_set)
+        #break
+    
+    # If testing, program asks for location of testing set and weights found from 
+    # training module
+    # Then it will output the accuracy achieved with set weights
+    elif selection == '2':
+        testing.main()
         break
+    
