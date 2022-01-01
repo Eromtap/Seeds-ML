@@ -146,7 +146,7 @@ def main(accuracy, training_set):
     
     
     ## Just how many iterations we've gone thru
-    counter = 0
+    counter = 1
     
     
     ## Amount we extend range if accuracy target not achieved
