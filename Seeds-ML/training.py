@@ -472,7 +472,7 @@ def main(accuracy, training_set):
         if counter % 1_000_000 == 0:        
             start_over()
             
-    
+    print('\n\n')
     print(round((correct / row_count) * 100, 2), 'percent accuracy', '\n\narea_node = ', area_node, '\nperm_node = ', perm_node, '\ncomp_node = ', comp_node, 
           '\nlen_node = ', len_node, '\nwid_node = ', wid_node, '\nasym_node = ', asym_node,
           '\ngroo_node = ', groo_node)
